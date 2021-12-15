@@ -5,7 +5,7 @@ import { NavBar, NavItems, NavButtonsWrapper, SvgWrapper, SignUpButton } from ".
 const Header = () => {
   return (
     <header>
-      <NavBar>
+      <NavBar className="container">
         <SvgWrapper>
           <li>
             <Logo/>
