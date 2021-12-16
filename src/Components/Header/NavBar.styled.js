@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const WrapperNavBar = styled("nav")`
   display: flex;
   align-items: center;
-  height: 4rem;
+  height: 5rem;
 ` 
 
 export const SvgWrapper = styled("div")`
   margin-right: 3rem;
 
   svg {
-    margin-top: 5px;
+    margin-top: 9px;
   }
 `
 

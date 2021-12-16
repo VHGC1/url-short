@@ -13,9 +13,9 @@ const NavBar = () => {
     <header>
       <WrapperNavBar className="container">
         <SvgWrapper>
-          <li>
+         
             <Logo />
-          </li>
+         
         </SvgWrapper>
 
         <NavItems>

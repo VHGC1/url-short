@@ -27,6 +27,7 @@ html {
 
 body {
   color: #000;
+  font-size: 18px;
 }
 
 ul , li {
@@ -39,7 +40,7 @@ a {
 }
 
 .container {
-  max-width: 50rem;
+  max-width: 60rem;
   padding: 0 1rem;
   margin: 0 auto;
 }

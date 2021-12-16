@@ -3,6 +3,10 @@ import { SignUpButton, WrapperNavBar } from "./NavBar.styled";
 
 export const WrapperMobileNavBar = styled(WrapperNavBar)`
   justify-content: space-between;
+
+  svg {
+    margin-top: 9px;
+  }
 `;
 
 export const MobileButton = styled("button")`
@@ -54,7 +58,7 @@ export const List = styled("ul")`
     content: "";
     width: 100%;
     height: .5px;
-    background: hsl(257, 7%, 63%);
+    background: 	#9e9aa7;
   }
 `;
 
