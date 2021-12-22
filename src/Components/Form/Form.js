@@ -1,23 +1,25 @@
-import React from "react";
-import Bg from "../../Assets/bg-shorten-desktop.svg";
+import React, { useState } from "react";
 
-const Form = () => {
+import { FormUrl } from "./Form.styled";
+
+const Form = ({ setShortenedLink }) => {
+  const [link, setLink] = useState("");
+
   return (
     <section style={{ position: "relative" }}>
       <div className="container">
-        <form
-          style={{
-            backgroundColor: "hsl(257, 27%, 26%)",
-            backgroundImage: `url('${Bg}')`,
-            padding: "50px",
-            display: "flex",
-            borderRadius: "0.5rem",
-            marginBottom: "-4rem",
-          }}
+        <FormUrl
+          onSubmit={(e) => e.preventDefault()}
+          
         >
-          <input type="text" style={{ fontSize: "18px", flex: "1" }} />
+          <input
+            type="text"
+            style={{ fontSize: "18px", flex: "1" }}
+            onChange={({ target }) => setLink(target.value)}
+          />
           <button>Shorten it!</button>
-        </form>
+        </FormUrl>
+        {link && <p>{link}</p>}
       </div>
     </section>
   );
