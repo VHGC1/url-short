@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Form from "./Components/Form/Form";
 import Header from "./Components/Header/Header";
@@ -9,13 +9,17 @@ import FormItem from "./Components/Form/FormItem"
 function App() {
   const [shortenedLink, setShortenedLink] = useState([])
 
+  useEffect(() => {
+    console.log(shortenedLink)
+  }, [shortenedLink])
+
   return (
     <>
       <Header />
       <Home />
-      <Form setShortenedLink={setShortenedLink} />
-      {shortenedLink && shortenedLink.map((link) => <FormItem data={shortenedLink}/>)}
-      <StatisticsSection />
+      <Form setShortenedLink={setShortenedLink} shortenedLink={shortenedLink} />
+      {shortenedLink && shortenedLink.map((link) => <FormItem key={link.code} data={shortenedLink}/>)}
+      <StatisticsSection />0
     </>
   );
 }
