@@ -4,7 +4,7 @@ import { SignUpButton } from "../Header/NavBar.styled";
 
 export const Section = styled("section")`
   display: flex;
-  height: 88vh;
+  height: calc(100vh - 5rem);
   background: url("${Bg}") no-repeat right;
   margin-top: 1rem;
 `;
