@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { FormUrl } from "./Form.styled";
+import { FormUrl, Section } from "./Form.styled";
 
-const Form = ({ setShortenedLink, shortenedLink }) => {
+const Form = ({ setShortenedLink, shortenedLink, setError }) => {
   const [link, setLink] = useState("");
 
   async function handleSubmit(event) {
@@ -14,23 +14,27 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
     const shortened = await response.json();
     if (response.ok === true) {
       setShortenedLink([...shortenedLink, shortened.result]);
+    } else {
+      setError(shortened.error);
     }
   }
 
   return (
-    <section style={{ position: "relative" }}>
+    <Section>
       <div className="container">
         <FormUrl onSubmit={handleSubmit}>
-          <input
-            type="text"
-            style={{ fontSize: "18px", flex: "1" }}
-            onChange={({ target }) => setLink(target.value)}
-          />
-          <button>Shorten it!</button>
+          <div>
+            <input
+              type="text"
+              style={{ fontSize: "18px", flex: "1" }}
+              onChange={({ target }) => setLink(target.value)}
+              required
+            />
+            <button>Shorten it!</button>
+          </div>
         </FormUrl>
-        {link && <p>{link}</p>}
       </div>
-    </section>
+    </Section>
   );
 };
 
