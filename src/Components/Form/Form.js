@@ -26,6 +26,9 @@ const Form = ({ setShortenedLink, shortenedLink, setError }) => {
           <div>
             <input
               type="text"
+              id="link"
+              name="link"
+              value={link}
               style={{ fontSize: "18px", flex: "1" }}
               onChange={({ target }) => setLink(target.value)}
               required
