@@ -45,7 +45,13 @@ export const SignUpButton = styled("button")`
   color: #fff;
   transition: .2s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: 	#97E4E4;
+  }
+
+  &:disabled {
+    cursor: wait;
+    opacity: 0.5;
   }
 `

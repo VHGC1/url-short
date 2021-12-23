@@ -1,10 +1,18 @@
 import React, { useState } from "react";
-import { FormUrl, Section } from "./Form.styled";
+import {
+  Error,
+  FormSubContainer,
+  FormUrl,
+  Input,
+  InputContainer,
+  Section,
+  ShortenButton,
+} from "./Form.styled";
 
 const Form = ({ setShortenedLink, shortenedLink }) => {
-  const [link, setLink] = useState('');
+  const [link, setLink] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(null);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -31,19 +39,25 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
     <Section>
       <div className="container">
         <FormUrl onSubmit={handleSubmit}>
-          <div>
-            <input
-              type="text"
-              id="link"
-              name="link"
-              value={link}
-              style={{ fontSize: "18px", flex: "1" }}
-              onChange={({ target }) => setLink(target.value)}
-              required
-            />
-            {loading ? <button disabled>Shorten it!</button> : <button>Shorten it!</button>}
-          </div>
-          {error && <p>{error}</p>}
+          <FormSubContainer>
+            <InputContainer>
+              <Input
+                type="text"
+                id="link"
+                name="link"
+                value={link}
+                onChange={({ target }) => setLink(target.value)}
+                placeholder="Shorten a link here..."
+                required
+              />
+              {error && <Error>error</Error>}
+            </InputContainer>
+            {loading ? (
+              <ShortenButton disabled>Shorten it!</ShortenButton>
+            ) : (
+              <ShortenButton>Shorten it!</ShortenButton>
+            )}
+          </FormSubContainer>
         </FormUrl>
       </div>
     </Section>
