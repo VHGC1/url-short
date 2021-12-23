@@ -1,21 +1,29 @@
 import React, { useState } from "react";
-
 import { FormUrl, Section } from "./Form.styled";
 
-const Form = ({ setShortenedLink, shortenedLink, setError }) => {
-  const [link, setLink] = useState("");
+const Form = ({ setShortenedLink, shortenedLink }) => {
+  const [link, setLink] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null)
 
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const response = await fetch(
-      `https://api.shrtco.de/v2/shorten?url=${link}`
-    );
-    const shortened = await response.json();
-    if (response.ok === true) {
-      setShortenedLink([...shortenedLink, shortened.result]);
-    } else {
-      setError(shortened.error);
+    try {
+      setLoading(true);
+      const response = await fetch(
+        `https://api.shrtco.de/v2/shorten?url=${link}`
+      );
+      const json = await response.json();
+      if (response.ok === false) {
+        throw new Error(json.error);
+      } else {
+        setShortenedLink([...shortenedLink, json.result]);
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -33,8 +41,9 @@ const Form = ({ setShortenedLink, shortenedLink, setError }) => {
               onChange={({ target }) => setLink(target.value)}
               required
             />
-            <button>Shorten it!</button>
+            {loading ? <button disabled>Shorten it!</button> : <button>Shorten it!</button>}
           </div>
+          {error && <p>{error}</p>}
         </FormUrl>
       </div>
     </Section>

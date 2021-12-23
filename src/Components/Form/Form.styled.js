@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Bg from "../../Assets/bg-shorten-desktop.svg";
 
 export const Section = styled("section")`
-  background: linear-gradient(transparent 50%, rgb(191, 191, 191) 50%) no-repeat;
+  background: linear-gradient(transparent 50%, #F0F1F6 50%) no-repeat;
 `
 
 export const FormUrl = styled("form")`
