@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useMedia from "../../Hooks/useMedia";
 import {
   Error,
   FormSubContainer,
@@ -13,6 +14,7 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
   const [link, setLink] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const mobile = useMedia('(max-width: 40rem)')
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -40,7 +42,7 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
       <div className="container">
         <FormUrl onSubmit={handleSubmit}>
           <FormSubContainer>
-            <InputContainer>
+            <InputContainer mobile={mobile}>
               <Input
                 type="text"
                 id="link"
