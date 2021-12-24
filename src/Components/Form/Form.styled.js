@@ -8,12 +8,19 @@ export const Section = styled("section")`
 
 export const FormUrl = styled("form")`
   background: #3b3054 url("${Bg}");
+  background-size: cover;
   padding: 2.5rem;
   border-radius: 0.5rem;
 `;
 
 export const FormSubContainer = styled("div")`
   display: flex;
+
+  /* flex-direction: column; */
+
+  @media (max-width: 40rem) {
+    flex-direction: column;
+  }
 `
 
 export const InputContainer = styled("div")`
@@ -31,6 +38,10 @@ export const Input = styled("input")`
 export const ShortenButton = styled(SignUpButton)`
   border-radius: 0.4rem;
   margin-left: 1rem;
+
+  @media (max-width: 40rem) {
+    margin: 2rem 0 0 0;
+  }
 `;
 
 export const Error = styled("p")`

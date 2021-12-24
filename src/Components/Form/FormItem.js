@@ -1,4 +1,4 @@
-import React from "react";
+   import React from "react";
 import { CopyButton, UrlShort } from "./FormItem.styled";
 
 const FormItem = ({ data }) => {
@@ -9,7 +9,6 @@ const FormItem = ({ data }) => {
         className="container"
         style={{
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
         }}
       >
