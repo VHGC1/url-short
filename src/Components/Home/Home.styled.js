@@ -10,7 +10,7 @@ export const Section = styled("section")`
 
   @media (max-width: 40rem) {
     background: none;
-    margin-bottom: 5rem;
+    margin-bottom: 15rem;
   }
 `;
 
@@ -43,6 +43,12 @@ export const TextWrapper = styled("div")`
   }
 
   @media (max-width: 50rem) {
+    & {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     & p {
       text-shadow: 0 0 2rem black;
     }

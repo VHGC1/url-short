@@ -40,7 +40,7 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
   return (
     <Section>
       <div className="container">
-        <FormUrl onSubmit={handleSubmit}>
+        <FormUrl onSubmit={handleSubmit} style={{position: "relative"}}>
           <FormSubContainer>
             <InputContainer>
               <Input
