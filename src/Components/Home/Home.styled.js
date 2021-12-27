@@ -7,12 +7,30 @@ export const Section = styled("section")`
   height: calc(100vh - 5rem);
   background: url("${Bg}") no-repeat right;
   margin-top: 1rem;
+
+  @media (max-width: 40rem) {
+    background: none;
+    margin-bottom: 5rem;
+  }
 `;
 
 export const Container = styled("div")`
   display: grid;
   grid-template-columns: 1fr 0.9fr;
   align-items: center;
+
+  @media (max-width: 50rem) {
+    grid-template-columns: none;
+    text-align: center;
+  }
+
+  @media (max-width: 40rem) {
+    & {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
 `;
 
 export const TextWrapper = styled("div")`
@@ -22,6 +40,12 @@ export const TextWrapper = styled("div")`
 
   p {
     color: hsl(0, 0%, 75%);
+  }
+
+  @media (max-width: 50rem) {
+    & p {
+      text-shadow: 0 0 2rem black;
+    }
   }
 `;
 

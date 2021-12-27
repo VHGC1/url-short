@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Bg from "../../Assets/bg-shorten-desktop.svg";
 import { SignUpButton } from "../Header/NavBar.styled";
 
@@ -16,16 +16,14 @@ export const FormUrl = styled("form")`
 export const FormSubContainer = styled("div")`
   display: flex;
 
-  /* flex-direction: column; */
-
   @media (max-width: 40rem) {
     flex-direction: column;
   }
-`
+`;
 
 export const InputContainer = styled("div")`
   flex: 1;
-`
+`;
 
 export const Input = styled("input")`
   padding: 0.5rem 1.5rem;
@@ -33,6 +31,14 @@ export const Input = styled("input")`
   flex: 1;
   font-size: 18px;
   width: 100%;
+  ${({ error }) =>
+    error &&
+    css`
+      border: 2px hsl(0, 100%, 74%) solid;
+      &::-webkit-input-placeholder {
+        color: hsl(0, 100%, 74%);
+      }
+    `}
 `;
 
 export const ShortenButton = styled(SignUpButton)`
@@ -46,4 +52,5 @@ export const ShortenButton = styled(SignUpButton)`
 
 export const Error = styled("p")`
   position: absolute;
-`
+  color: hsl(0, 100%, 74%);
+`;

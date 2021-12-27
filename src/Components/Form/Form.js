@@ -16,23 +16,25 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-
-    try {
-      setLoading(true);
-      const response = await fetch(
-        `https://api.shrtco.de/v2/shorten?url=${link}`
-      );
-      const json = await response.json();
-      if (response.ok === false) {
-        throw new Error(json.error);
-      } else {
-        setShortenedLink([...shortenedLink, json.result]);
+    if(link) {
+      try {
+        setError(null)
+        setLoading(true);
+        const response = await fetch(
+          `https://api.shrtco.de/v2/shorten?url=${link}`
+        );
+        const json = await response.json();
+        if (response.ok === false) {
+          throw new Error(json.error);
+        } else {
+          setShortenedLink([...shortenedLink, json.result]);
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
+    } else setError("Please add a link");
   }
 
   return (
@@ -48,9 +50,9 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
                 value={link}
                 onChange={({ target }) => setLink(target.value)}
                 placeholder="Shorten a link here..."
-                required
+                error={error}
               />
-              {error && <Error>error</Error>}
+              {error && <Error>{error}</Error>}
             </InputContainer>
             {loading ? (
               <ShortenButton disabled>Shorten it!</ShortenButton>

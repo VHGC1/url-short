@@ -1,10 +1,16 @@
 import React from "react";
 import { Container, HomeButton, Section, TextWrapper } from "./Home.styled";
+import useMedia from "../../Hooks/useMedia"
+import Bg from "../../Assets/illustration-working.svg";
 
 const Home = () => {
+  const mobile = useMedia('(max-width: 40rem)')
+
   return (
     <Section>
       <Container className="container">
+        {mobile && <img src={Bg} alt="background" />}
+
         <TextWrapper>
           <h1>More than just shorter links</h1>
           <p>
