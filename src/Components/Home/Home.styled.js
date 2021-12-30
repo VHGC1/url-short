@@ -7,6 +7,7 @@ export const Section = styled("section")`
   height: calc(100vh - 5rem);
   background: url("${Bg}") no-repeat right;
   margin-top: 1rem;
+  
 
   @media (max-width: 40rem) {
     background: none;
@@ -40,6 +41,7 @@ export const TextWrapper = styled("div")`
 
   p {
     color: hsl(0, 0%, 75%);
+    text-shadow: none;
   }
 
   @media (max-width: 50rem) {
@@ -50,7 +52,7 @@ export const TextWrapper = styled("div")`
     }
 
     & p {
-      text-shadow: 0 0 2rem black;
+      text-shadow: 0 0 2rem #fff;
     }
   }
 `;

@@ -7,6 +7,7 @@ const CopyButton = ({ copy }) => {
   function copyToClipboard() {
     navigator.clipboard.writeText(copy.current.innerText);
     setCopied(true);
+    setTimeout(() => setCopied(false), 1000)
   }
 
   return (

@@ -16,9 +16,10 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    if(link) {
+    
+    if (validateUrl(link)) {
       try {
-        setError(null)
+        setError(null);
         setLoading(true);
         const response = await fetch(
           `https://api.shrtco.de/v2/shorten?url=${link}`
@@ -28,6 +29,7 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
           throw new Error(json.error);
         } else {
           setShortenedLink([...shortenedLink, json.result]);
+          setLink('')
         }
       } catch (err) {
         setError(err.message);
@@ -37,10 +39,18 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
     } else setError("Please add a link");
   }
 
+  function validateUrl(url) {
+    let regex = /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/
+
+    if (url.length > 0) {
+      return regex.test(url)
+    }
+  }
+
   return (
     <Section>
       <div className="container">
-        <FormUrl onSubmit={handleSubmit} style={{position: "relative"}}>
+        <FormUrl onSubmit={handleSubmit} style={{ position: "relative" }}>
           <FormSubContainer>
             <InputContainer>
               <Input

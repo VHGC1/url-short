@@ -38,6 +38,7 @@ export const LinkWrapper = styled("div")`
   display: flex;
   flex: 1;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 
   @media (max-width: 40rem) {
