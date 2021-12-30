@@ -1,14 +1,15 @@
-import React from 'react'
+import React from "react";
+import { GetStartedButton, Section, TextWrapper } from "./BoostSection.styled";
 
 const BoostSection = () => {
   return (
-    <section>
-      <div className="container">
+    <Section>
+      <TextWrapper className="container">
         <h1>Boost your links today</h1>
-        <button>Get Started</button>
-      </div>
-    </section>
-  )
-}
+        <GetStartedButton>Get Started</GetStartedButton>
+      </TextWrapper>
+    </Section>
+  );
+};
 
-export default BoostSection
+export default BoostSection;

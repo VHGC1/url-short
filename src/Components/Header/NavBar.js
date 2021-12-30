@@ -1,11 +1,11 @@
 import React from "react";
 import { ReactComponent as Logo } from "../../Assets/logo.svg";
+import { Button } from "../Button.styled";
 import {
   WrapperNavBar,
   NavItems,
   NavButtonsWrapper,
   SvgWrapper,
-  SignUpButton,
 } from "./NavBar.styled";
 
 const NavBar = () => {
@@ -27,7 +27,7 @@ const NavBar = () => {
         <NavButtonsWrapper nada="true">
           <li>Login</li>
           <li>
-            <SignUpButton>Sign Up</SignUpButton>
+            <Button>Sign Up</Button>
           </li>
         </NavButtonsWrapper>
       </WrapperNavBar>

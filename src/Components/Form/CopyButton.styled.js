@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { SignUpButton } from "../Header/NavBar.styled";
+import { Button } from "../Button.styled";
 
-export const Button = styled(SignUpButton)`
+export const ButtonCopy = styled(Button)`
   border-radius: 0.2rem;
   margin-left: 1rem;
   ${({ copied }) =>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Bg from "../../Assets/illustration-working.svg";
-import { SignUpButton } from "../Header/NavBar.styled";
+import { Button } from "../Button.styled";
 
 export const Section = styled("section")`
   display: flex;
@@ -57,7 +57,7 @@ export const TextWrapper = styled("div")`
   }
 `;
 
-export const HomeButton = styled(SignUpButton)`
+export const HomeButton = styled(Button)`
   margin: 1rem 0;
   font-size: 1rem;
 `;

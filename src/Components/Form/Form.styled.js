@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import Bg from "../../Assets/bg-shorten-desktop.svg";
-import { SignUpButton } from "../Header/NavBar.styled";
+import { Button } from "../Button.styled";
 
 export const Section = styled("section")`
   background: linear-gradient(transparent 50%, #f0f1f6 50%) no-repeat;
@@ -41,7 +41,7 @@ export const Input = styled("input")`
     `}
 `;
 
-export const ShortenButton = styled(SignUpButton)`
+export const ShortenButton = styled(Button)`
   border-radius: 0.4rem;
   margin-left: 1rem;
 

@@ -6,6 +6,7 @@ import Home from "./Components/Home/Home";
 import StatisticsSection from "./Components/StatisticsSection/StatisticsSection";
 import FormItem from "./Components/Form/FormItem";
 import BoostSection from "./Components/BoostSection/BoostSection";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [shortenedLink, setShortenedLink] = useState([]);
@@ -18,6 +19,7 @@ function App() {
       {shortenedLink && <FormItem data={shortenedLink} />}
       <StatisticsSection />
       <BoostSection />
+      <Footer />
     </>
   );
 }

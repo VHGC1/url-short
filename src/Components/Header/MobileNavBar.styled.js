@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { SignUpButton, WrapperNavBar } from "./NavBar.styled";
+import { Button } from "../Button.styled";
+import { WrapperNavBar } from "./NavBar.styled";
 
 export const WrapperMobileNavBar = styled(WrapperNavBar)`
   justify-content: space-between;
@@ -66,6 +67,6 @@ export const ListItem = styled("li")`
   padding: 1.25rem 0;
 `;
 
-export const MobileSignUpButton = styled(SignUpButton)`
+export const MobileSignUpButton = styled(Button)`
   width: 100%;
 `;

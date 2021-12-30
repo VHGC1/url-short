@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "./CopyButton.styled";
+import { ButtonCopy } from "./CopyButton.styled";
 
 const CopyButton = ({ copy }) => {
   const [copied, setCopied] = useState(false);
@@ -11,9 +11,9 @@ const CopyButton = ({ copy }) => {
   }
 
   return (
-    <Button copied={copied} onClick={copyToClipboard}>
+    <ButtonCopy copied={copied} onClick={copyToClipboard}>
       {copied ? "Copied!" : "copy"}
-    </Button>
+    </ButtonCopy>
   );
 };
 
