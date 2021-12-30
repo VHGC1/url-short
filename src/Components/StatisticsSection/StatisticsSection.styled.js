@@ -7,6 +7,10 @@ export const Section = styled("section")`
 export const TextWrapper = styled("div")`
   padding: 100px 0;
   text-align: center;
+
+  & p {
+    color: #bfbfbf;
+  }
 `;
 
 export const WrapperCards = styled("div")`
@@ -32,10 +36,12 @@ export const Card = styled("div")`
 
   & h3 {
     font-size: 1rem;
+    margin-bottom: 5px;
   }
 
   & p {
     font-size: 12px;
+    color: #bfbfbf;
   }
 
   &:nth-child(2) {
@@ -55,7 +61,7 @@ export const Card = styled("div")`
     bottom: 90px;
     height: 0.4rem;
     width: 2rem;
-    background: hsl(180, 66%, 49%);
+    background: #2acfcf;
   }
 
   &::before {
@@ -66,7 +72,7 @@ export const Card = styled("div")`
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    background: hsl(257, 27%, 26%) url("${({ icon }) => icon}") center no-repeat;
+    background: 	#3b3054 url("${({ icon }) => icon}") center no-repeat;
     background-size: 50%;
     transition: 0.2s;
   }
