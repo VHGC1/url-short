@@ -48,11 +48,11 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
   }
 
   return (
-    <Section>
-      <div className="container">
-        <FormUrl onSubmit={handleSubmit} style={{ position: "relative" }}>
-          <FormSubContainer>
-            <InputContainer>
+    <Section >
+      <div className="container" >
+        <FormUrl onSubmit={handleSubmit}>
+          <FormSubContainer >
+            <InputContainer >
               <Input
                 type="text"
                 id="link"

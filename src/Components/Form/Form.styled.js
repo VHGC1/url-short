@@ -4,9 +4,12 @@ import { Button } from "../Button.styled";
 
 export const Section = styled("section")`
   background: linear-gradient(transparent 50%, #f0f1f6 50%) no-repeat;
+  /* margin-top: 25rem; */
 `;
 
 export const FormUrl = styled("form")`
+
+  position: relative;
   background: #3b3054 url("${Bg}");
   background-size: cover;
   padding: 2.5rem;

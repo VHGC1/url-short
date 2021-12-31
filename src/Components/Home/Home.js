@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, HomeButton, Section, TextWrapper } from "./Home.styled";
+import { Container, HomeButton, Img, Section, TextWrapper } from "./Home.styled";
 import useMedia from "../../Hooks/useMedia"
 import Bg from "../../Assets/illustration-working.svg";
 
@@ -11,7 +11,7 @@ const Home = () => {
       <Container className="container">
         {mobile && <img src={Bg} alt="background" />}
 
-        <TextWrapper>
+        <TextWrapper >
           <h1>More than just shorter links</h1>
           <p>
             Build your brand's recognition and get detailed insights on how your
@@ -19,6 +19,8 @@ const Home = () => {
           </p>
           <HomeButton>Get Started</HomeButton>
         </TextWrapper>
+        
+        {!mobile && <Img src={Bg} alt="background" />}
       </Container>
     </Section>
   );
