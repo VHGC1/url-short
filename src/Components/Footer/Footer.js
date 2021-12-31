@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <Wrapper className="container">
-        <Logo style={{fill: "#fff"}} />
+        <Logo />
         <Wrapper>
           <OptionsWrapper>
             <span>Features</span>
