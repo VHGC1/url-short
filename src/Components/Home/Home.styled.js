@@ -27,6 +27,7 @@ export const Container = styled("div")`
 
   @media (max-width: 40rem) {
     & {
+      position: static;
       display: flex;
       flex-direction: column;
       text-align: center;
@@ -59,6 +60,12 @@ export const TextWrapper = styled("div")`
 
     & p {
       text-shadow: 0 0 2rem #fff;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    & {
+      z-index: unset;
     }
   }
 `;
