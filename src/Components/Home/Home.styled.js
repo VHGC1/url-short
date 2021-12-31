@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Bg from "../../Assets/illustration-working.svg";
 import { Button } from "../Button.styled";
 
 export const Section = styled("section")`
