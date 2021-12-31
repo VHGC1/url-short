@@ -29,7 +29,7 @@ export const UrlShort = styled("div")`
     }
   }
 
-  & div p:last-of-type {
+  & div a:last-of-type {
     color: hsl(180, 66%, 49%);
   }
 `;

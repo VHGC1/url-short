@@ -11,8 +11,17 @@ const FormItem = ({ data }) => {
         {data.map(({ code, full_short_link, original_link }) => (
           <UrlShort key={(code += Math.random() * 10)}>
             <LinkWrapper>
-              <p>{original_link}</p>
-              <p ref={linkRef}>{full_short_link}</p>
+              <a href={original_link} target="_blank" rel="noreferrer">
+                {original_link}
+              </a>
+              <a
+                href={full_short_link}
+                target="_blank"
+                ref={linkRef}
+                rel="noreferrer"
+              >
+                {full_short_link}
+              </a>
             </LinkWrapper>
             <CopyButton copy={linkRef}></CopyButton>
           </UrlShort>
