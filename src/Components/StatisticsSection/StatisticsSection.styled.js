@@ -92,11 +92,11 @@ export const Card = styled("div")`
       height: 4rem;
       width: .5rem;
       bottom: -4rem;
-      right: calc(100vw/2 - 2rem);
+      right: calc(100vw/2 - 1.3rem);
     }
 
     &::before {
-      right: calc(100vw/2 - 3.7rem);
+      right: calc(100vw/2 - 3.1rem);
     }
   }
 
