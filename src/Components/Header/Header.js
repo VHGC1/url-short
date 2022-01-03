@@ -7,9 +7,9 @@ const Header = () => {
   const mobile = useMedia('(max-width: 40rem)')
   
   return (
-    <>
+    <header>
       {mobile ? <MobileNavBar /> :<NavBar />}
-    </>
+    </header>
   );
 };
 

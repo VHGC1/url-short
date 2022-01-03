@@ -39,7 +39,7 @@ export const ContainerMobileMenu = styled("div")`
   height: 100%;
   width: 100%;
   z-index: 100;
-`
+`;
 
 export const WrapperMobileMenu = styled("div")`
   position: absolute;
@@ -65,8 +65,8 @@ export const List = styled("ul")`
   &::after {
     content: "";
     width: 100%;
-    height: .5px;
-    background: 	#9e9aa7;
+    height: 0.5px;
+    background: #9e9aa7;
   }
 `;
 

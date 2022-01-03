@@ -10,12 +10,10 @@ import {
 
 const NavBar = () => {
   return (
-    <header>
+    <>
       <WrapperNavBar className="container">
         <SvgWrapper>
-         
-            <Logo />
-         
+          <Logo />
         </SvgWrapper>
 
         <NavItems>
@@ -31,7 +29,7 @@ const NavBar = () => {
           </li>
         </NavButtonsWrapper>
       </WrapperNavBar>
-    </header>
+    </>
   );
 };
 

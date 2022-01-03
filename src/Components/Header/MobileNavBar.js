@@ -20,7 +20,7 @@ const MobileNavBar = () => {
   }
 
   return (
-    <header>
+    <>
       <WrapperMobileNavBar className="container">
         <div>
           <Logo />
@@ -48,7 +48,7 @@ const MobileNavBar = () => {
           </WrapperMobileMenu>
         </ContainerMobileMenu>
       )}
-    </header>
+    </>
   );
 };
 
