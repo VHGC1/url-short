@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "../../Assets/logo.svg";
 import {
+  ContainerMobileMenu,
   List,
   ListItem,
   MenuMobileContainer,
@@ -13,6 +14,11 @@ import {
 const MobileNavBar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
+  function handleOutsideClick(event) {
+    if(event.target === event.currentTarget)
+    setMobileMenu(false)
+  }
+
   return (
     <header>
       <WrapperMobileNavBar className="container">
@@ -24,21 +30,23 @@ const MobileNavBar = () => {
       </WrapperMobileNavBar>
 
       {mobileMenu && (
-        <WrapperMobileMenu>
-          <MenuMobileContainer>
-            <List>
-              <ListItem>Features</ListItem>
-              <ListItem>Pricing</ListItem>
-              <ListItem>Resources</ListItem>
-            </List>
-            <ul>
-              <ListItem>Login</ListItem>
-              <ListItem>
-                <MobileSignUpButton>Sign Up</MobileSignUpButton>
-              </ListItem>
-            </ul>
-          </MenuMobileContainer>
-        </WrapperMobileMenu>
+        <ContainerMobileMenu onClick={handleOutsideClick}>
+          <WrapperMobileMenu>
+            <MenuMobileContainer>
+              <List>
+                <ListItem>Features</ListItem>
+                <ListItem>Pricing</ListItem>
+                <ListItem>Resources</ListItem>
+              </List>
+              <ul>
+                <ListItem>Login</ListItem>
+                <ListItem>
+                  <MobileSignUpButton>Sign Up</MobileSignUpButton>
+                </ListItem>
+              </ul>
+            </MenuMobileContainer>
+          </WrapperMobileMenu>
+        </ContainerMobileMenu>
       )}
     </header>
   );

@@ -34,6 +34,13 @@ export const MobileButton = styled("button")`
   }
 `;
 
+export const ContainerMobileMenu = styled("div")`
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+`
+
 export const WrapperMobileMenu = styled("div")`
   position: absolute;
   width: 100%;
