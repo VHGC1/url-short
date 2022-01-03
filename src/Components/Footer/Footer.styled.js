@@ -45,6 +45,10 @@ export const OptionsWrapper = styled("div")`
     color: #bfbfbf;
   }
 
+  & li:hover {
+    color: hsl(180, 66%, 49%);
+  }
+
   @media (max-width: 40rem) {
     margin: 1rem 0;
   }
@@ -53,6 +57,10 @@ export const OptionsWrapper = styled("div")`
 export const IconsWrapper = styled("div")`
   & svg {
     margin: 0 1rem;
+  }
+
+  & svg:hover path {
+    fill: hsl(180, 66%, 49%);
   }
 
   @media (max-width: 40rem) {
