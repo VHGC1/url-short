@@ -41,20 +41,27 @@ export const LinkWrapper = styled("div")`
   align-items: center;
   width: 100%;
 
+  & a:nth-child(1) {
+    word-break: break-all;
+  }
+
   @media (max-width: 40rem) {
     & {
       flex-direction: column;
     }
 
-    & p:first-of-type::after {
+    & a {
+      word-break: break-all;
+      width: 100%;
+    }
+
+    & a:first-of-type::after {
       content: "";
       display: block;
       width: 100%;
       height: 1px;
-      margin: .5rem 0;
+      margin: 0.5rem 0;
       background-color: #f0f1f6;
     }
   }
 `;
-
-
