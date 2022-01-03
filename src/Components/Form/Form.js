@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Error,
   FormSubContainer,
@@ -13,6 +13,18 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
   const [link, setLink] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const data = localStorage.getItem("link")
+
+    if(data){
+      setShortenedLink(JSON.parse(data))
+    }
+  }, [setShortenedLink])
+
+  useEffect(() => {
+    localStorage.setItem('link', JSON.stringify(shortenedLink))
+  }, [shortenedLink])
 
   async function handleSubmit(event) {
     event.preventDefault();

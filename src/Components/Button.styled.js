@@ -10,8 +10,7 @@ export const Button = styled("button")`
   color: #fff;
   transition: .2s;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: 	#97E4E4;
   }
 
