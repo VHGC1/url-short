@@ -73,6 +73,7 @@ const Form = ({ setShortenedLink, shortenedLink }) => {
                 onChange={({ target }) => setLink(target.value)}
                 placeholder="Shorten a link here..."
                 error={error}
+                inputMode="url"
               />
               {error && <Error>{error}</Error>}
             </InputContainer>
